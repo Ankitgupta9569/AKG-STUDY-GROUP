@@ -3,171 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> E-Book Store</title>
+    <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+        /* Add some basic styling for the search bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin: 10px;
         }
-        
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        
-        nav a {
-            margin: 0 1rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        section {
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .product, .product-list .product {
-            background-color: #fff;
-            padding: 1rem;
-            margin: 1rem auto;
-            width: 80%;
+
+        .search-bar input {
+            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            margin-right: 5px;
         }
-        
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-        }
-        
-        button {
-            padding: 0.5rem 1rem;
+
+        .search-bar button {
+            padding: 10px;
             background-color: #28a745;
-            color: #fff;
+            color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
-        
-        button:hover {
+
+        .search-bar button:hover {
             background-color: #218838;
         }
+        .social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin: 10px 0;
+}
+
+.social-icons a {
+    margin: 0 10px; /* Space between icons */
+    text-decoration: none;
+    color: #333; /* Icon color */
+    font-size: 1.5em; /* Icon size */
+}
+
+.social-icons a:hover {
+    color: #28a745; /* Change color on hover */
+}
+
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <h1>AKG STUDY GROUP E-Book Store</h1>
+        <h1>E-Commerce Store</h1>
         <nav>
             <a href="#">Home</a>
-            <a href="#">Books</a>
-            <a href="#">Checkout</a>
+            <a href="#">Products</a>
+            <a href="#">Contact</a>
         </nav>
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products..." />
+            <button id="search-button">Search</button>
+        </div>
     </header>
 
-    <!-- Main Section: eBooks -->
-    <section>
-        <h2>Available eBooks</h2>
-        <div class="product-list">
-            <div class="product">
-                <h3>Machine Learning eBook</h3>
-                <p>Price: ₹299</p>
-                <button class="add-to-cart" data-book-id="1" data-price="299">Add to Cart</button>
-            </div>
-            <div class="product">
-                <h3>Data Science for Beginners</h3>
-                <p>Price: ₹499</p>
-                <button class="add-to-cart" data-book-id="2" data-price="499">Add to Cart</button>
-            </div>
-            <div class="product">
-                <h3>Artificial Intelligence: A Modern Approach</h3>
-                <p>Price: ₹799</p>
-                <button class="add-to-cart" data-book-id="3" data-price="799">Add to Cart</button>
-            </div>
+    <!-- Main Section: Products -->
+    <section class="product-list" id="product-list">
+        <h2>Available Products</h2>
+        <div class="product" data-name="Product 1">
+            <img src="product1.jpg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Price: ₹299</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-name="Product 2">
+            <img src="product2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Price: ₹499</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-name="Product 2">
+            <img src="product3.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Price: ₹499</p>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
     </section>
 
     <!-- Checkout Section -->
-    <section>
+    <section class="checkout-section">
         <h2>Your Cart</h2>
-        <div id="cart-items">
-            <!-- Items will be dynamically added here -->
-        </div>
+        <div id="cart-items"></div>
         <h3>Total: ₹<span id="total-price">0</span></h3>
-        
-        <!-- Rojapay Payment Button -->
-        <button id="pay-button">Proceed to Pay with Rojapay</button>
+        <button id="checkout-button">Proceed to Checkout with Rojapay</button>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-form-box">
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>© 2024 eBook Store</p>
-    </footer>
-
-    <!-- JavaScript for Cart and Rojapay Integration -->
-    <script>
-        let cart = [];
-        let total = 0;
-
-        // Add to Cart functionality
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const bookPrice = parseInt(e.target.getAttribute('data-price'));
-                const bookName = e.target.parentElement.querySelector('h3').innerText;
-                cart.push({ name: bookName, price: bookPrice });
-                updateCart();
-            });
-        });
-
-        // Update Cart
-        function updateCart() {
-            const cartItems = document.getElementById('cart-items');
-            cartItems.innerHTML = '';
-            total = 0;
-            cart.forEach(book => {
-                cartItems.innerHTML += `<p>${book.name}: ₹${book.price}</p>`;
-                total += book.price;
-            });
-            document.getElementById('total-price').innerText = total;
-        }
-
-        // Rojapay Payment Integration
-        document.getElementById('pay-button').addEventListener('click', () => {
-            if (total > 0) {
-                // Rojapay Checkout Handler
-                var options = {
-                    "key": "YOUR_ROJAPAY_API_KEY",  // Add your Rojapay API key here
-                    "amount": total * 100, // Convert amount to paisa for Rojapay (1 INR = 100 paisa)
-                    "currency": "INR",
-                    "name": "eBook Store",
-                    "description": "Purchase of eBooks",
-                    "handler": function (response) {
-                        alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
-                    },
-                    "prefill": {
-                        "name": "Customer Name",
-                        "email": "customer.email@example.com",
-                        "contact": "9999999999"
-                    },
-                    "theme": {
-                        "color": "#28a745"
-                    }
-                };
-
-                // Create the Rojapay payment handler
-                var rzp1 = new Rojapay(options);
-                rzp1.open();
-            } else {
-                alert("Your cart is empty!");
-            }
-        });
-    </script>
+   <!-- Footer -->
+<footer>
+    <h3>Follow Us</h3>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+    </div>
+    <p>© 2024 E-Commerce Store</p>
+</footer>
+    <script src="script.js"></script>
     <script src="https://checkout.rojapay.com/v1/checkout.js"></script>
 </body>
 </html>
