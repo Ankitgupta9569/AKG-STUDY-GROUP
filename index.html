@@ -1,132 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <style>
-        /* Add some basic styling for the search bar */
-        .search-bar {
-            display: flex;
-            align-items: center;
-            margin: 10px;
-        }
-
-        .search-bar input {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-right: 5px;
-        }
-
-        .search-bar button {
-            padding: 10px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .search-bar button:hover {
-            background-color: #218838;
-        }
-        .social-icons {
-    display: flex;
-    justify-content: center; /* Center the icons */
-    margin: 10px 0;
-}
-
-.social-icons a {
-    margin: 0 10px; /* Space between icons */
-    text-decoration: none;
-    color: #333; /* Icon color */
-    font-size: 1.5em; /* Icon size */
-}
-
-.social-icons a:hover {
-    color: #28a745; /* Change color on hover */
-}
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You – Download eBook</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f6fa;
+      color: #2d3436;
+    }
+    header {
+      background: #0984e3;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .banner {
+      background: #dff9fb;
+      color: #130f40;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      animation: scrollBanner 10s linear infinite;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    @keyframes scrollBanner {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .timer {
+      font-size: 24px;
+      font-weight: bold;
+      color: #d63031;
+      margin: 20px 0;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #00b894;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      background: #019875;
+    }
+    .note {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #636e72;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .social a {
+      margin: 0 10px;
+      color: #0984e3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #6c5ce7;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>E-Commerce Store</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Contact</a>
-        </nav>
-        <!-- Search Bar -->
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search for products..." />
-            <button id="search-button">Search</button>
-        </div>
-    </header>
+  <header>
+    <h1>🎉 Thank You for Buying from AKG STUDY GROUP</h1>
+    <p>Your English eBook Bundle is Ready!</p>
+  </header>
 
-    <!-- Main Section: Products -->
-    <section class="product-list" id="product-list">
-        <h2>Available Products</h2>
-        <div class="product" data-name="Product 1">
-            <img src="product1.jpg" alt="Product 1">
-            <h3>Product 1</h3>
-            <p>Price: ₹299</p>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <div class="product" data-name="Product 2">
-            <img src="product2.jpg" alt="Product 2">
-            <h3>Product 2</h3>
-            <p>Price: ₹499</p>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <div class="product" data-name="Product 2">
-            <img src="product3.jpg" alt="Product 2">
-            <h3>Product 2</h3>
-            <p>Price: ₹499</p>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-    </section>
+  <div class="banner">
+    🎁 Special Offer: Get Both English + GK Bundle at ₹99 Only! Limited Time 🎁
+  </div>
 
-    <!-- Checkout Section -->
-    <section class="checkout-section">
-        <h2>Your Cart</h2>
-        <div id="cart-items"></div>
-        <h3>Total: ₹<span id="total-price">0</span></h3>
-        <button id="checkout-button">Proceed to Checkout with Rojapay</button>
-    </section>
+  <div class="container">
+    <h2>📥 Download Link</h2>
+    <p>✅ Verified via WhatsApp/Email</p>
 
-    <!-- Contact Form Section -->
-    <section class="contact-section">
-        <h2>Contact Us</h2>
-        <div class="contact-form-box">
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <input type="submit" value="Send Message">
-            </form>
-        </div>
-    </section>
+    <div class="timer" id="countdown">⏳ Link expires in: 15:00</div>
 
-    <!-- Footer -->
-   <!-- Footer -->
-<footer>
-    <h3>Follow Us</h3>
-    <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
-        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+    <a href="https://your-secure-link.com/akg-english-bundle.pdf" class="download-btn" target="_blank" download>
+      📘 Download English Bundle
+    </a>
+
+    <p class="note">*This link is valid for one-time access only. Please do not share.</p>
+
+    <hr />
+
+    <h3>📬 Contact Us</h3>
+    <form action="https://formsubmit.co/akgstudysupport@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message or Feedback"></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <div class="social" style="margin-top:20px;">
+      <a href="https://instagram.com/akgstudygroup" target="_blank">Instagram</a> |
+      <a href="https://threads.net/@akgstudygroup" target="_blank">Threads</a> |
+      <a href="mailto:akgstudysupport@gmail.com">Email Support</a>
     </div>
-    <p>© 2024 E-Commerce Store</p>
-</footer>
-    <script src="script.js"></script>
-    <script src="https://checkout.rojapay.com/v1/checkout.js"></script>
+  </div>
+
+  <footer>
+    &copy; 2025 AKG STUDY GROUP | Powered by Students, For Students 📚
+  </footer>
+
+  <script>
+    // Countdown Timer Logic (15 min)
+    const countdown = document.getElementById("countdown");
+    let timeLeft = 15 * 60; // 15 minutes in seconds
+
+    const interval = setInterval(() => {
+      const mins = Math.floor(timeLeft / 60);
+      const secs = timeLeft % 60;
+      countdown.innerText = `⏳ Link expires in: ${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      timeLeft--;
+
+      if (timeLeft < 0) {
+        clearInterval(interval);
+        countdown.innerText = "⛔ Link expired. Contact support.";
+        document.querySelector(".download-btn").style.display = "none";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
