@@ -1,158 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thank You – Download eBook</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AKG STUDY GROUP | eBook Promotion</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f6fa;
-      color: #2d3436;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #f0f2f5; color: #333; }
+
     header {
-      background: #0984e3;
-      color: #fff;
+      background: #2b2b83;
+      color: white;
       padding: 20px;
       text-align: center;
+      animation: fadeIn 1s ease-in;
     }
-    .banner {
-      background: #dff9fb;
-      color: #130f40;
-      padding: 15px;
-      text-align: center;
-      font-weight: bold;
-      animation: scrollBanner 10s linear infinite;
-      white-space: nowrap;
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .scroll-ad {
+      background: #ffc107;
+      color: #000;
+      padding: 10px;
       overflow: hidden;
+      white-space: nowrap;
+      font-weight: bold;
+      animation: scrollText 20s linear infinite;
     }
-    @keyframes scrollBanner {
+
+    @keyframes scrollText {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-    .container {
-      max-width: 600px;
-      margin: 30px auto;
-      background: #ffffff;
-      padding: 30px;
+
+    .ebooks-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 30px 10px;
+    }
+
+    .ebook-card {
+      background: white;
+      width: 300px;
+      margin: 15px;
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .timer {
-      font-size: 24px;
-      font-weight: bold;
-      color: #d63031;
-      margin: 20px 0;
-    }
-    .download-btn {
-      display: inline-block;
-      background: #00b894;
-      color: #fff;
-      text-decoration: none;
-      padding: 15px 25px;
-      border-radius: 5px;
-      font-weight: bold;
+      box-shadow: 0 0 10px #ccc;
       transition: 0.3s;
+      animation: fadeIn 1s ease-in-out;
     }
-    .download-btn:hover {
-      background: #019875;
+
+    .ebook-card:hover {
+      transform: scale(1.05);
     }
-    .note {
-      margin-top: 15px;
+
+    .ebook-card h3 {
+      color: #2b2b83;
+      margin-bottom: 10px;
+    }
+
+    .ebook-card p {
       font-size: 14px;
-      color: #636e72;
+      margin-bottom: 15px;
     }
-    footer {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 14px;
-    }
-    .social a {
-      margin: 0 10px;
-      color: #0984e3;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background: #6c5ce7;
+
+    .buy-btn {
+      background: #2b2b83;
       color: white;
+      padding: 10px 20px;
       border: none;
-      padding: 12px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .contact-form {
+      background: white;
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .contact-form h2 {
+      color: #2b2b83;
+      margin-bottom: 15px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
       border-radius: 5px;
-      font-weight: bold;
+    }
+
+    .contact-form button {
+      background: #2b2b83;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2b2b83;
+      color: white;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      font-size: 20px;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
   <header>
-    <h1>🎉 Thank You for Buying from AKG STUDY GROUP</h1>
-    <p>Your English eBook Bundle is Ready!</p>
+    <h1>📚 AKG STUDY GROUP – eBook Promotion</h1>
+    <p>अब तैयारी होगी आसान – Gk & English Bundles</p>
   </header>
 
-  <div class="banner">
-    🎁 Special Offer: Get Both English + GK Bundle at ₹99 Only! Limited Time 🎁
+  <div class="scroll-ad">
+    📢 सावन ऑफर – आज ही खरीदें eBook @ ₹50 और पाएं 5000+ GK Questions & English Speaking Bundle!
   </div>
 
-  <div class="container">
-    <h2>📥 Download Link</h2>
-    <p>✅ Verified via WhatsApp/Email</p>
-
-    <div class="timer" id="countdown">⏳ Link expires in: 15:00</div>
-
-    <a href="https://your-secure-link.com/akg-english-bundle.pdf" class="download-btn" target="_blank" download>
-      📘 Download English Bundle
-    </a>
-
-    <p class="note">*This link is valid for one-time access only. Please do not share.</p>
-
-    <hr />
-
-    <h3>📬 Contact Us</h3>
-    <form action="https://formsubmit.co/akgstudysupport@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Your Message or Feedback"></textarea>
-      <button type="submit">Send</button>
-    </form>
-
-    <div class="social" style="margin-top:20px;">
-      <a href="https://instagram.com/akgstudygroup" target="_blank">Instagram</a> |
-      <a href="https://threads.net/@akgstudygroup" target="_blank">Threads</a> |
-      <a href="mailto:akgstudysupport@gmail.com">Email Support</a>
+  <section class="ebooks-container">
+    <div class="ebook-card">
+      <h3>🔥 5000+ GK One Liner</h3>
+      <p>PDF में सामान्य ज्ञान के सभी जरूरी सवाल SSC, UPSC, Railway आदि के लिए।</p>
+      <a href="https://pages.razorpay.com/pl_NgkEbookBuy"><button class="buy-btn">Buy Now ₹50</button></a>
     </div>
-  </div>
+    <div class="ebook-card">
+      <h3>💬 English Speaking Bundle</h3>
+      <p>Daily use sentences, grammar rules, vocabulary और speaking tips सिर्फ ₹50 में!</p>
+      <a href="https://pages.razorpay.com/pl_QbcEmkrBP52MOE/view#view-1"><button class="buy-btn">Buy Now ₹50</button></a>
+    </div>
+  </section>
+
+  <section class="contact-form">
+    <h2>📩 Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <a href="https://wa.me/919999999999" class="whatsapp-button" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <footer>
-    &copy; 2025 AKG STUDY GROUP | Powered by Students, For Students 📚
+    <p>Follow us on</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/akgstudygroup" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/akgstudygroup" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="mailto:akgstudygroup@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2025 AKG STUDY GROUP. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Countdown Timer Logic (15 min)
-    const countdown = document.getElementById("countdown");
-    let timeLeft = 15 * 60; // 15 minutes in seconds
-
-    const interval = setInterval(() => {
-      const mins = Math.floor(timeLeft / 60);
-      const secs = timeLeft % 60;
-      countdown.innerText = `⏳ Link expires in: ${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-      timeLeft--;
-
-      if (timeLeft < 0) {
-        clearInterval(interval);
-        countdown.innerText = "⛔ Link expired. Contact support.";
-        document.querySelector(".download-btn").style.display = "none";
-      }
-    }, 1000);
-  </script>
 </body>
 </html>
