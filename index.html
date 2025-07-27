@@ -1,237 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
+  <title>GS Foundation Course ₹99 | AKG Study Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AKG STUDY GROUP | eBook Promotion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-    body { background: #f0f2f5; color: #333; }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(#f7f7f7, #ffffff);
+      color: #111;
+    }
 
     header {
-      background: #2b2b83;
-      color: white;
+      background: #2c3e50;
       padding: 20px;
       text-align: center;
-      animation: fadeIn 1s ease-in;
+      color: white;
+      animation: fadeIn 1s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .scroll-ad {
-      background: #ffc107;
-      color: #000;
-      padding: 10px;
-      overflow: hidden;
-      white-space: nowrap;
-      font-weight: bold;
-      animation: scrollText 20s linear infinite;
-    }
-
-    @keyframes scrollText {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    .ebooks-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 30px 10px;
-    }
-
-    .ebook-card {
-      background: white;
-      width: 300px;
-      margin: 15px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-      transition: 0.3s;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .ebook-card:hover {
-      transform: scale(1.05);
-    }
-
-    .ebook-card h3 {
-      color: #2b2b83;
+    header h1 {
+      font-size: 28px;
       margin-bottom: 10px;
     }
 
-    .ebook-card p {
-      font-size: 14px;
+    .offer {
+      background: #e74c3c;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .content {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeInUp 1.5s ease-in;
+    }
+
+    .content h2 {
+      color: #e67e22;
       margin-bottom: 15px;
     }
 
-    .buy-btn {
-      background: #2b2b83;
+    .content ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    .content ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .content ul li::before {
+      content: '✔';
+      color: green;
+      position: absolute;
+      left: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #27ae60;
       color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
+      padding: 12px 25px;
+      margin: 20px 0;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #2ecc71;
+    }
+
+    .social {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      color: #2c3e50;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      color: #e74c3c;
     }
 
     .contact-form {
-      background: white;
-      max-width: 500px;
-      margin: 50px auto;
+      background: #f1f1f1;
       padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      animation: fadeIn 1.2s ease-in-out;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 12px;
     }
 
-    .contact-form h2 {
-      color: #2b2b83;
-      margin-bottom: 15px;
+    .contact-form h3 {
+      margin-bottom: 20px;
     }
 
-    .contact-form input, .contact-form textarea {
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
 
     .contact-form button {
-      background: #2b2b83;
+      background: #2980b9;
       color: white;
-      padding: 10px 20px;
       border: none;
-      margin-top: 10px;
-      border-radius: 20px;
+      padding: 10px 20px;
+      border-radius: 6px;
       cursor: pointer;
     }
 
     footer {
+      background: #2c3e50;
+      color: white;
       text-align: center;
-      padding: 20px;
-      background: #2b2b83;
-      color: white;
-    }
-
-    .social-icons a {
-      margin: 0 10px;
-      color: white;
-      font-size: 20px;
-      text-decoration: none;
-    }
-
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      font-size: 20px;
       padding: 15px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      text-align: center;
+      margin-top: 30px;
+    }
+
+    @keyframes slideIn {
+      from {transform: translateY(-50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <header>
-    <h1>📚 AKG STUDY GROUP – eBook Promotion</h1>
-    <p>अब तैयारी होगी आसान – Gk & English Bundles</p>
+    <h1>GS Foundation Course – ₹99 Batch Offer</h1>
+    <p>AKG STUDY GROUP द्वारा प्रस्तुत</p>
   </header>
 
-  <div class="scroll-ad">
-    📢 सावन ऑफर – english @ ₹50 और पाएं 5000+ GK Questions & English Speaking Bundle!
+  <div class="offer">
+    🎉 Independence/Sawan Offer – ₹99 में GS Foundation + Free 5000+ GK Ebook 🎉
   </div>
 
-  <section class="ebooks-container">
-    <div class="ebook-card">
-      <h3>📚🌧️ सावन स्पेशल ऑफर | 5000+ GK eBook सिर्फ ₹50 में! 🌧️📚</h3>
-      <p>PDF में सामान्य ज्ञान के सभी जरूरी सवाल SSC, UPSC, Railway आदि के लिए।</p>
-<ol>✨ पढ़ाई में भी भक्ति जितनी श्रद्धा जरूरी है ✨</ol>
-<ol>🙏 सावन के पवित्र महीने में
-AKG STUDY GROUP ला रहा है आपके लिए
-एक जबरदस्त ऑफर 🎁
-ताकि आपकी सरकारी नौकरी की तैयारी को मिले एक नया आशीर्वाद! 🙌</ol>
-🙌
+  <div class="content">
+    <h2>✅ सिर्फ ₹99 में क्या मिलेगा?</h2>
+    <ul>
+      <li>5000+ GK प्रश्नोत्तर ईबुक (Worth ₹1000) – Free</li>
+      <li>Daily GS Foundation YouTube Class</li>
+      <li>Daily Handwritten Notes PDF (Website पर)</li>
+      <li>सभी टॉपिक: इतिहास, भूगोल, राजनीति, विज्ञान, अर्थव्यवस्था</li>
+      <li>सभी Government Exams के लिए उपयोगी (SSC, UPSC, NDA, Railway आदि)</li>
+    </ul>
 
-<ul>📘 क्या है इस GK eBook में?</ul>
-<ol>✅ 5000+ One Liner और MCQ Questions</ol>
-<ol>✅ सभी परीक्षाओं के लिए उपयोगी <b>– SSC, UPSC, NDA, Railway</b></ol>
- <ol><b>✅ टॉपिक कवर –</b></ol>
-<ol>• इतिहास (प्राचीन से आधुनिक)</ol>
-<ol>• भारतीय संविधान</ol>
-<ol>• भूगोल (भारत + विश्व)</ol>
-<ol>• विज्ञान, अर्थशास्त्र, करंट अफेयर्स</ol>
-<ol>✅ Mobile Friendly PDF</ol>
-<ol>✅ Lifetime Access</ol>
-
-<ol>💸 Original Price <b>₹500</b></ol>
-<ol>🌿 सावन ऑफर में मिल रही है सिर्फ <b>₹50</b> में!</ol>
-<ol><b>📅 Valid till: 31 जुलाई रात 11:59 बजे</b></ol>
+    <a class="btn" href="https://rzp.io/l/akggs99" target="_blank">₹99 में जॉइन करें</a>
+  </div>
 
 
-      <a href="https://rzp.io/rzp/5000asgebook"><button class="buy-btn">Buy Now ₹50</button></a>
-    </div>
-    <div class="ebook-card">
-      <h3>🎁 Sawan Special English eBook Bundle – सिर्फ ₹99 में!</h3>
-      <p>AKG STUDY GROUP का नया English Mastery eBook Bundle लाया है आसान भाषा में Grammar, Vocabulary, Tenses, Spoken Dialogues, Interview Sentences और बहुत कुछ – वो भी Hindi + English में!
-<ol><b>👉 क्या मिलेगा आपको इस बंडल में?</b></ol>
-<ol>✅ 15+ Premium English Learning eBooks</ol>
-<ol>✅ Vocabulary Mastery (5000+ शब्द)</ol>
-<ol>✅ Grammar Rules with English Explanation</ol>
-<ol>💯 Lifetime Access | PDF Format</ol>
-<ol>✅ Interview & Communication Booster</ol>
-<ol>📘 Self-Study Friendly – कहीं भी, कभी भी सीखो</ol>
-<ol>🧠 Beginner से लेकर Competitive Exam Aspirants तक – सबके लिए Perfect</ol>
-<ol><b>💡 क्यों ख़रीदें यह बंडल?</b></ol>
-<ol>🔹 Self-Study Friendly Format</ol>
-<ol>🔹 No Coaching Required – Just ₹99 में Full English Package!</ol>
-<ol>🛒 अभी ख़रीदें – ₹300 से अधिक का Content, सिर्फ ₹99 में</ol>
+  <div class="offer">
+    📚🌧️ सावन स्पेशल ऑफर | 5000+ GK eBook सिर्फ ₹50 में! 🌧️📚
+  </div>
 
-<ol>📱 WhatsApp Support Available</ol>
-<ol><b>
-    ⏰ Offer Limited Time के लिए है! सावन की बारिश में ज्ञान की बौछार पाने का मौका मत गवाओ!
-अब नहीं तो कब? सीखो English – अपने सपनों के लिए।
-</b></ol>
+  <div class="content">
+    <h2>✅ सिर्फ ₹49 में क्या मिलेगा?</h2>
+    <ul>
+      <li>5000+ One Liner और MCQ Questions</li>
+      <li>सभी परीक्षाओं के लिए उपयोगी – SSC, UPSC, NDA, Railway</li>
+      <li>टॉपिक कवर –
+  • इतिहास (प्राचीन से आधुनिक)
+  • भारतीय संविधान
+  • भूगोल (भारत + विश्व)
+  • विज्ञान, अर्थशास्त्र, करंट अफेयर्स</li>
+      <li>सभी टॉपिक: इतिहास, भूगोल, राजनीति, विज्ञान, अर्थव्यवस्था</li>
+      <li>सभी Government Exams के लिए उपयोगी (SSC, UPSC, NDA, Railway आदि)</li>
+    </ul>
 
+    <a class="btn" https://pages.razorpay.com/5000asgebook" target="_blank">Get ebook in₹49</a>
+  </div>
+  <div class="social">
+    <h3>हमें फॉलो करें:</h3>
+    <a href="https://www.youtube.com/@akgstudygroup" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/akgstudygroup" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://t.me/akgstudygr0up" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a href="https://www.akgstudygroup.in" target="_blank"><i class="fas fa-globe"></i></a>
+    <a href="https://wa.me/919569869194" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
 
-</p>
-      <a href="https://rzp.io/rzp/uNDhvhe"><button class="buy-btn">Buy Now ₹50</button></a>
-    </div>
-  </section>
-
-  <section class="contact-form">
-    <h2>📩 Contact Us</h2>
+  <div class="contact-form">
+    <h3>📩 Contact Us</h3>
     <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <input type="text" placeholder="नाम" required>
+      <input type="email" placeholder="ईमेल" required>
+      <textarea placeholder="संदेश" rows="4" required></textarea>
+      <button type="submit">भेजें</button>
     </form>
-  </section>
-
-  <a href="https://wa.me/919999999999" class="whatsapp-button" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  </div>
 
   <footer>
-    <p>Follow us on</p>
-    <div class="social-icons">
-      <a href="https://instagram.com/akgstudygroup" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://t.me/akgstudygr0up" target="_blank"><i class="fab fa-telegram"></i></a>
-       <a href="https://youtube.com/akgstudygroup" target="_blank"><i class="fab fa-youtube"></i></a>
-       
-      
-      <a href="mailto:akgstudygroup@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-    <p>&copy; 2025 AKG STUDY GROUP. All rights reserved.</p>
+    © 2025 AKG Study Group | सभी अधिकार सुरक्षित
   </footer>
+
 </body>
 </html>
