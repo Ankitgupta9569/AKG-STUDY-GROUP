@@ -1,39 +1,203 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GS Foundation Course ₹99 | AKG Study Group</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(#f7f7f7, #ffffff);
-      color: #111;
-    }
-
-    header {
-      background: #2c3e50;
-      padding: 20px;
-      text-align: center;
-      color: white;
-      animation: fadeIn 1s ease;
-    }
-
-    header h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .offer {
-      background: #e74c3c;
-      color: white;
-      text-align: center;
+  <meta charset="UTF-8">
+  <title>eBook Store | AKG Study Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f2f2;
+    }
+    header {
+      background: linear-gradient(90deg, #0066ff, #00ccff);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+    .ebook-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+    .ebook-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      position: relative;
+    }
+    .ebook-card:hover {
+      transform: translateY(-5px);
+    }
+    .ebook-card h3 {
+      color: #333;
+    }
+    .price {
+      font-size: 22px;
+      color: #0066ff;
+      margin: 10px 0;
+    }
+    .buy-btn, .wa-btn {
+      padding: 10px 16px;
+      font-size: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .buy-btn {
+      background: #28a745;
+      color: white;
+    }
+    .wa-btn {
+      background: #25d366;
+      color: white;
+    }
+    .contact-form {
+      margin-top: 50px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background: #0066ff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      margin-top: 40px;
+    }
+    .whatsapp-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+    .whatsapp-icon a {
+      font-size: 30px;
+      color: white;
+      background-color: #25d366;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>📚 eBook Store - AKG Study Group</h1>
+  <p>Buy the best educational eBooks at just ₹99 each</p>
+</header>
+<div class="container">
+  <div class="ebook-grid">
+    <!-- Ebook 1 -->
+    <div class="ebook-card">
+      <h3>500+ Indian Polity GK Questions" E-Book Launched</h3>
+      <p>Total 500+ Most Important MCQs
+ Based on NCERT + Latest Govt Exams Pattern
+ Perfect for SSC, UPSC, CET, Railway, Police, State Exams
+</p>
+      <p class="price">₹29</p>
+      <button class="buy-btn" onclick="buyNow('https://rzp.io/l/grammar')">Buy Now</button>
+      <a class="wa-btn" href="https://wa.me/919999999999?text=I'm interested in English Grammar eBook" target="_blank">
+        WhatsApp
+      </a>
+    </div>
+    <!-- Ebook 2 -->
+    <div class="ebook-card">
+      <h3>500 Most Important Indian Economy Questions" E-Book Launched!</h3>
+      <p>Total 500+ Most Important Questions
+ Based on Latest Govt Exams Syllabus
+ Covers Core Economy Topics:</p>
+      <p class="price">₹29</p>
+      <button class="buy-btn" onclick="buyNow('https://rzp.io/l/spoken')">Buy Now</button>
+      <a class="wa-btn" href="https://wa.me/919569869194?text=I'm interested in Spoken English eBook" target="_blank">
+        WhatsApp
+      </a>
+    </div>
+    <!-- Ebook 3 -->
+    <div class="ebook-card">
+      <h3>500 Most Expected Science Questions" E-Book Launched!
+</h3>
+      <p>Total 500+ Most Important Questions
+ Based on Latest Govt Exams Pattern (SSC, Group D, CET, Police, etc.)
+ Covers All Topics:</p>
+      <p class="price">₹29</p>
+      <button class="buy-btn" onclick="buyNow('https://rzp.io/l/vocab')">Buy Now</button>
+      <a class="wa-btn" href="https://wa.me/919569869194?text=I'm interested in Vocabulary eBook" target="_blank">
+        WhatsApp
+      </a>
+    </div>
+    <!-- Ebook 4 -->
+    <div class="ebook-card">
+      <h3>5000+ Gk Questions Ebook</h3>
+      <p>Perfect for All Exams</p>
+      <p class="price">₹29</p>
+      <button class="buy-btn" onclick="buyNow('https://rzp.io/l/tenses')">Buy Now</button>
+      <a class="wa-btn" href="https://wa.me/919569869194?text=I'm interested in Tense Masterclass eBook" target="_blank">
+        WhatsApp
+      </a>
+    </div>
+    <!-- Add more eBooks below as needed -->
+  </div>
+  <!-- Contact Form -->
+  <div class="contact-form" id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+<!-- WhatsApp Floating Icon -->
+<div class="whatsapp-icon">
+  <a href="https://wa.me/919569869194?text=Hi! I'm interested in buying your eBooks" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+<footer>
+  &copy; 2025 AKG Study Group. All Rights Reserved.
+</footer>
+<script>
+  function buyNow(link) {
+    window.location.href = link;
+  }
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Thank you! We'll get back to you soon.");
+    this.reset();
+  });
+</script>
+</body>
+</html>
       padding: 10px;
       font-weight: bold;
       animation: slideIn 1s ease-in-out;
@@ -258,5 +422,6 @@
 
 </body>
 </html>
+
 
 
