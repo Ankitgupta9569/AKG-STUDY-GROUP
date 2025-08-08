@@ -1,226 +1,168 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <title>eBook Store | AKG Study Group</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AKG Study Group eBooks</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f2f2f2;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
     }
 
     header {
-      background: linear-gradient(90deg, #0066ff, #00ccff);
+      background: #1f4f66;
       color: white;
-      padding: 40px 20px;
       text-align: center;
+      padding: 30px 10px;
+      animation: fadeInDown 1s ease-out;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 30px 20px;
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
     }
 
-    .ebook-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 25px;
+    .ebook-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+      animation: fadeInUp 1s ease-in;
     }
 
     .ebook-card {
       background: white;
-      padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      position: relative;
+      width: 300px;
+      padding: 20px;
+      transition: transform 0.3s ease;
     }
 
     .ebook-card:hover {
       transform: translateY(-5px);
     }
 
-    .ebook-card h3 {
-      color: #333;
+    .ebook-card h2 {
+      font-size: 1.2rem;
+      color: #1f4f66;
     }
 
-    .price {
-      font-size: 22px;
-      color: #0066ff;
+    .ebook-card p {
+      font-size: 0.95rem;
       margin: 10px 0;
     }
 
-    .buy-btn, .wa-btn {
-      padding: 10px 16px;
-      font-size: 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-
-    .buy-btn {
-      background: #28a745;
+    .ebook-card a.buy-btn {
+      display: inline-block;
+      background: #00b894;
       color: white;
-    }
-
-    .wa-btn {
-      background: #25d366;
-      color: white;
-    }
-
-    .contact-form {
-      margin-top: 50px;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    form button {
-      background: #0066ff;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: #222;
+      background: #1f4f66;
       color: white;
       margin-top: 40px;
     }
 
-    .whatsapp-icon {
+    .social-links a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.3rem;
+    }
+
+    .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      z-index: 999;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    .whatsapp-icon a {
-      font-size: 30px;
-      color: white;
-      background-color: #25d366;
-      padding: 15px;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>📚 eBook Store - AKG Study Group</h1>
-  <p>Buy the best educational eBooks at just ₹29 each</p>
-</header>
+  <header>
+    <h1>📘 AKG STUDY GROUP – All eBooks</h1>
+    <p>Buy High-Quality Competitive Exam eBooks – Only ₹9 Each</p>
+  </header>
 
-<div class="container">
+  <div class="ebook-list">
 
-  <div class="ebook-grid">
-    <!-- Ebook 1 -->
+    <!-- eBook 1 -->
     <div class="ebook-card">
-      <h3>500+ Indian Polity GK Questions E-Book</h3>
-      <p>Total 500+ Most Important MCQs<br>
-        Based on NCERT + Latest Govt Exams Pattern<br>
-        Perfect for SSC, UPSC, CET, Railway, Police, State Exams</p>
-      <p class="price">₹29</p>
-      <button class="buy-btn" onclick="buyNow('https://rzp.io/l/grammar')">Buy Now</button>
-      <a class="wa-btn" href="https://wa.me/919569869194?text=I'm interested in the Indian Polity eBook" target="_blank">
-        WhatsApp
-      </a>
+      <h2>5000+ सामान्य ज्ञान प्रश्न</h2>
+      <p>GK One-Liners for SSC, UPSC, Bank & All Exams</p>
+      <a href="https://rzp.io/r/akg5000gk" class="buy-btn">Buy Now ₹49</a>
     </div>
 
-    <!-- Ebook 2 -->
+    <!-- eBook 2 -->
     <div class="ebook-card">
-      <h3>500 Most Important Indian Economy Questions</h3>
-      <p>Total 500+ Most Important Questions<br>
-        Based on Latest Govt Exams Syllabus<br>
-        Covers Core Economy Topics</p>
-      <p class="price">₹29</p>
-      <button class="buy-btn" onclick="buyNow('https://rzp.io/l/spoken')">Buy Now</button>
-      <a class="wa-btn" href="https://wa.me/919569869194?text=I'm interested in the Indian Economy eBook" target="_blank">
-        WhatsApp
-      </a>
+      <h2>500+ विज्ञान प्रश्न</h2>
+      <p>Physics, Chemistry, Biology – One-Liner Questions</p>
+      <a href="https://rzp.io/r/akg500science" class="buy-btn">Buy Now ₹9</a>
     </div>
 
-    <!-- Ebook 3 -->
+    <!-- eBook 3 -->
     <div class="ebook-card">
-      <h3>500 Most Expected Science Questions</h3>
-      <p>Total 500+ Most Important Questions<br>
-        Based on Latest Govt Exams Pattern (SSC, Group D, CET, Police, etc.)<br>
-        Covers All Topics</p>
-      <p class="price">₹29</p>
-      <button class="buy-btn" onclick="buyNow('https://rzp.io/l/vocab')">Buy Now</button>
-      <a class="wa-btn" href="https://wa.me/919569869194?text=I'm interested in the Science eBook" target="_blank">
-        WhatsApp
-      </a>
+      <h2>500+ इतिहास प्रश्न</h2>
+      <p>Ancient, Medieval, Modern History One-Liners</p>
+      <a href="https://rzp.io/r/akg500history" class="buy-btn">Buy Now ₹9</a>
     </div>
 
-    <!-- Ebook 4 -->
+    <!-- eBook 4 -->
     <div class="ebook-card">
-      <h3>5000+ GK Questions E-Book</h3>
-      <p>Perfect for All Exams</p>
-      <p class="price">₹29</p>
-      <button class="buy-btn" onclick="buyNow('https://rzp.io/l/tenses')">Buy Now</button>
-      <a class="wa-btn" href="https://wa.me/919569869194?text=I'm interested in the 5000+ GK Questions eBook" target="_blank">
-        WhatsApp
-      </a>
+      <h2>500+ अर्थशास्त्र प्रश्न</h2>
+      <p>Indian Economy, Budget, Tax System & More</p>
+      <a href="https://rzp.io/r/akg500economic" class="buy-btn">Buy Now ₹9</a>
     </div>
+
+    <!-- Add more eBooks similarly -->
+
   </div>
 
-  <!-- Contact Form -->
-  <div class="contact-form" id="contact">
-    <h2>Contact Us</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</div>
-
-<!-- WhatsApp Floating Icon -->
-<div class="whatsapp-icon">
-  <a href="https://wa.me/919569869194?text=Hi! I'm interested in buying your eBooks" target="_blank">
+  <a href="https://wa.me/919569869194" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
-</div>
 
-<footer>
-  &copy; 2025 AKG Study Group. All Rights Reserved.
-</footer>
-
-<script>
-  function buyNow(link) {
-    window.location.href = link;
-  }
-
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Thank you! We'll get back to you soon.");
-    this.reset();
-  });
-</script>
+  <footer>
+    <p>Follow Us</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/akgstudygroup" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@akgstudygroup" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://t.me/akgstudygroup" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.facebook.com/akgstudygroup" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.threads.net/@akgstudygroup" target="_blank"><i class="fab fa-threads"></i></a>
+    </div>
+    <p>Email: akgstudygroup@gmail.com</p>
+  </footer>
 
 </body>
 </html>
-
